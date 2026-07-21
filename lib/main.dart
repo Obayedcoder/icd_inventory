@@ -13,6 +13,10 @@ class ICDInventoryApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ICD Inventory',
+      theme: ThemeData(
+  useMaterial3: true,
+  colorSchemeSeed: Colors.green,
+),
       home: const DashboardScreen(),
     );
   }
