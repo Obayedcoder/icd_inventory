@@ -8,9 +8,10 @@ class SparePartCard extends StatelessWidget {
     super.key,
     required this.part,
   });
-
+  
   @override
 Widget build(BuildContext context) {
+  final bool isLowStock = part.stock <= 10;
  return Card(
   child: Padding(
     padding: const EdgeInsets.all(12),
@@ -48,26 +49,27 @@ Widget build(BuildContext context) {
           ),
       const SizedBox(height: 10),
 
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+       Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  children: [
 
-            Text(
-              "Stock: ${part.stock} pcs",
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+    Text(
+      "Stock: ${part.stock} pcs",
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: isLowStock ? Colors.red : Colors.green,
+      ),
+    ),
 
-            Text(
-              "৳ ${part.salePrice}",
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+    Text(
+      "৳ ${part.salePrice}",
+      style: const TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+    ),
 
-          ],
-        ),
+  ],
+),
       ],
     ),
   ),
