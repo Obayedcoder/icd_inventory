@@ -4,6 +4,7 @@ import 'stock_in_screen.dart';
 import 'stock_out_screen.dart';
 import 'reports_screen.dart';
 
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
