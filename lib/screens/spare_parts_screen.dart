@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
+import '../data/dummy_data.dart';
+import '../widgets/spare_part_card.dart';
 
-class SparePartsScreen extends StatelessWidget {
+class SparePartsScreen extends StatefulWidget {
   const SparePartsScreen({super.key});
 
   @override
+  State<SparePartsScreen> createState() => _SparePartsScreenState();
+}
+
+class _SparePartsScreenState extends State<SparePartsScreen> {
+  @override
   Widget build(BuildContext context) {
+
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text("Spare Parts"),
       ),
-      body: const Center(
-        child: Text(
-          "Spare Parts Screen",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
+      body: ListView.builder(
+    itemCount: spareParts.length,
+  itemBuilder: (context, index) {
+    final part = spareParts[index];
+
+    return SparePartCard(
+      part:part      
+
+    );
+  },
+),
     );
   }
 }

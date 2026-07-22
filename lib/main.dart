@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screens/dashboard_screen.dart';
+import 'core/theme/app_theme.dart';
 
 void main() {
   runApp(const ICDInventoryApp());
@@ -13,10 +14,7 @@ class ICDInventoryApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'ICD Inventory',
-      theme: ThemeData(
-  useMaterial3: true,
-  colorSchemeSeed: Colors.green,
-),
+       theme: AppTheme.lightTheme, //ThemeData
       home: const DashboardScreen(),
     );
   }
